@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://cva7jpd2xucx3"]
+
+[ext_resource type="Script" uid="uid://bnx0kxgh4b5wq" path="res://core/main_menu.gd" id="1_fqoxg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gl0q7"]
+font_size = 32
+font_color = Color(0.803224, 0.163539, 0.318261, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fqoxg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Wybuchowa atmosfera"
+label_settings = SubResource("LabelSettings_gl0q7")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "zagraj"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "wyjdź"
+
+[connection signal="button_down" from="VBoxContainer/Button" to="." method="_on_play_button_down"]
+[connection signal="button_down" from="VBoxContainer/Button2" to="." method="_on_exit_button_down"]

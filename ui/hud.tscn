@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsw8f2cmym6u4"]
+
+[ext_resource type="Script" uid="uid://dv84hfoo0xge0" path="res://ui/lives_count.gd" id="1_rbyyf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xf15p"]
+font_size = 32
+
+[node name="GameHUD" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = -570.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+
+[node name="LiveCount" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "fdfs"
+label_settings = SubResource("LabelSettings_xf15p")
+script = ExtResource("1_rbyyf")

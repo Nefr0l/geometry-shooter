@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://7fy2ljrc87x2"]
+
+[ext_resource type="PackedScene" uid="uid://d2xt7uid3kg5w" path="res://player/player.tscn" id="1_8xnxh"]
+[ext_resource type="Script" uid="uid://dq60atl58l4xw" path="res://player/player_collision.gd" id="2_a04qp"]
+[ext_resource type="PackedScene" uid="uid://dsw8f2cmym6u4" path="res://ui/hud.tscn" id="4_sjcnv"]
+[ext_resource type="PackedScene" uid="uid://ct5clso3tijx4" path="res://ui/game_over.tscn" id="5_cjuek"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_8xnxh")]
+position = Vector2(583, 372)
+
+[node name="Lives" type="Node" parent="."]
+script = ExtResource("2_a04qp")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" parent="Control" instance=ExtResource("4_sjcnv")]
+layout_mode = 1
+offset_top = 4.0
+offset_right = 35.0
+offset_bottom = 25.0
+
+[node name="GameOver" parent="Control" instance=ExtResource("5_cjuek")]
+layout_mode = 1
+offset_left = 486.0
+offset_top = 36.0
+offset_right = 620.0
+offset_bottom = 76.0
