@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cva7jpd2xucx3"]
+[gd_scene load_steps=4 format=3 uid="uid://cva7jpd2xucx3"]
 
 [ext_resource type="Script" uid="uid://bnx0kxgh4b5wq" path="res://core/main_menu.gd" id="1_fqoxg"]
+[ext_resource type="FontFile" uid="uid://riqxn6jn8pr7" path="res://ui/monogram.ttf" id="2_4kqf0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gl0q7"]
-font_size = 32
+font = ExtResource("2_4kqf0")
+font_size = 96
 font_color = Color(0.803224, 0.163539, 0.318261, 1)
 
 [node name="MainMenu" type="Control"]
@@ -35,12 +37,21 @@ label_settings = SubResource("LabelSettings_gl0q7")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-text = "zagraj"
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_4kqf0")
+theme_override_font_sizes/font_size = 64
+text = "play"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-text = "wyjdź"
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_4kqf0")
+theme_override_font_sizes/font_size = 64
+text = "exit"
 
 [connection signal="button_down" from="VBoxContainer/Button" to="." method="_on_play_button_down"]
 [connection signal="button_down" from="VBoxContainer/Button2" to="." method="_on_exit_button_down"]

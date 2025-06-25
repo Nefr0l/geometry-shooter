@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ct5clso3tijx4"]
+[gd_scene load_steps=4 format=3 uid="uid://ct5clso3tijx4"]
 
 [ext_resource type="Script" uid="uid://dtreqajtnomap" path="res://ui/game_over.gd" id="1_oo8kp"]
+[ext_resource type="FontFile" uid="uid://riqxn6jn8pr7" path="res://ui/monogram.ttf" id="2_5eixk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oo8kp"]
-font_size = 32
+font = ExtResource("2_5eixk")
+font_size = 64
 
 [node name="GameOver" type="VBoxContainer"]
 anchors_preset = 15
@@ -21,24 +23,30 @@ theme_override_constants/margin_bottom = 64
 
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
-text = "przegrałeś"
+text = "you lose"
 label_settings = SubResource("LabelSettings_oo8kp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 process_mode = 3
+custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "zagraj jeszcze raz"
+theme_override_fonts/font = ExtResource("2_5eixk")
+theme_override_font_sizes/font_size = 32
+text = "play again"
 
 [node name="Button2" type="Button" parent="."]
 process_mode = 3
+custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
-text = "wyjdź do menu"
+theme_override_fonts/font = ExtResource("2_5eixk")
+theme_override_font_sizes/font_size = 32
+text = "to menu"
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="Button2" to="." method="_on_exit_to_menu_button_down"]
