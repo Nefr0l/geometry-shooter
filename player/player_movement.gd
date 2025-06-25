@@ -13,4 +13,5 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
+	GameManager.player_pos = position
 	move_and_slide()

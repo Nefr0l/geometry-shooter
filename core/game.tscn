@@ -1,14 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://7fy2ljrc87x2"]
+[gd_scene load_steps=7 format=3 uid="uid://7fy2ljrc87x2"]
 
 [ext_resource type="PackedScene" uid="uid://d2xt7uid3kg5w" path="res://player/player.tscn" id="1_8xnxh"]
 [ext_resource type="Script" uid="uid://dq60atl58l4xw" path="res://player/player_collision.gd" id="2_a04qp"]
 [ext_resource type="PackedScene" uid="uid://dsw8f2cmym6u4" path="res://ui/hud.tscn" id="4_sjcnv"]
 [ext_resource type="PackedScene" uid="uid://ct5clso3tijx4" path="res://ui/game_over.tscn" id="5_cjuek"]
+[ext_resource type="PackedScene" uid="uid://rgpt2hprt084" path="res://enemy/enemy.tscn" id="5_sjcnv"]
+[ext_resource type="Script" uid="uid://iuhy0vvqoyop" path="res://core/enemy_spawner.gd" id="6_cjuek"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_8xnxh")]
 position = Vector2(583, 372)
+
+[node name="Enemy" parent="." instance=ExtResource("5_sjcnv")]
+position = Vector2(124, 333)
 
 [node name="Lives" type="Node" parent="."]
 script = ExtResource("2_a04qp")
@@ -21,9 +26,12 @@ offset_bottom = 40.0
 
 [node name="Panel" parent="Control" instance=ExtResource("4_sjcnv")]
 layout_mode = 1
-offset_top = 4.0
-offset_right = 35.0
-offset_bottom = 25.0
+anchors_preset = -1
+anchor_right = 28.825
+anchor_bottom = 1.6
+offset_top = 3.0
+offset_right = 0.0
+offset_bottom = 0.0
 
 [node name="GameOver" parent="Control" instance=ExtResource("5_cjuek")]
 layout_mode = 1
@@ -31,3 +39,10 @@ offset_left = 486.0
 offset_top = 36.0
 offset_right = 620.0
 offset_bottom = 76.0
+
+[node name="EnemySpawner" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+script = ExtResource("6_cjuek")
+
+[connection signal="timeout" from="EnemySpawner" to="EnemySpawner" method="_on_timeout"]

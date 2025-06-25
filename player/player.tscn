@@ -7,11 +7,17 @@
 radius = 32.0624
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_ykyjo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_eqqp1")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_eqqp1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_eqqp1")
