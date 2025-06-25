@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://7fy2ljrc87x2"]
+[gd_scene load_steps=8 format=3 uid="uid://7fy2ljrc87x2"]
 
 [ext_resource type="PackedScene" uid="uid://d2xt7uid3kg5w" path="res://player/player.tscn" id="1_8xnxh"]
 [ext_resource type="Script" uid="uid://dq60atl58l4xw" path="res://player/player_collision.gd" id="2_a04qp"]
 [ext_resource type="PackedScene" uid="uid://dsw8f2cmym6u4" path="res://ui/hud.tscn" id="4_sjcnv"]
 [ext_resource type="PackedScene" uid="uid://ct5clso3tijx4" path="res://ui/game_over.tscn" id="5_cjuek"]
 [ext_resource type="PackedScene" uid="uid://rgpt2hprt084" path="res://enemy/enemy.tscn" id="5_sjcnv"]
-[ext_resource type="Script" uid="uid://iuhy0vvqoyop" path="res://core/enemy_spawner.gd" id="6_cjuek"]
+[ext_resource type="Script" uid="uid://iuhy0vvqoyop" path="res://enemy/enemy_spawner.gd" id="6_cjuek"]
+[ext_resource type="PackedScene" uid="uid://cqa6veqodnyyt" path="res://weapon/weapon.tscn" id="7_vhpdd"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -44,5 +45,8 @@ offset_bottom = 76.0
 wait_time = 3.0
 autostart = true
 script = ExtResource("6_cjuek")
+
+[node name="Weapon" parent="." instance=ExtResource("7_vhpdd")]
+position = Vector2(465, 393)
 
 [connection signal="timeout" from="EnemySpawner" to="EnemySpawner" method="_on_timeout"]
