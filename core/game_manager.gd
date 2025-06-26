@@ -6,6 +6,9 @@ var player_pos
 var config : ConfigFile
 var highScore
 
+var menu_theme : AudioStream
+var game_theme : AudioStream
+
 func _ready() -> void:
 	hp = 3
 	score = 0

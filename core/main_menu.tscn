@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cva7jpd2xucx3"]
+[gd_scene load_steps=8 format=3 uid="uid://cva7jpd2xucx3"]
 
 [ext_resource type="Script" uid="uid://bnx0kxgh4b5wq" path="res://core/main_menu.gd" id="1_fqoxg"]
 [ext_resource type="FontFile" uid="uid://riqxn6jn8pr7" path="res://ui/monogram.ttf" id="2_4kqf0"]
 [ext_resource type="Texture2D" uid="uid://cvw3ld1v32e7e" path="res://art/bg.png" id="3_540h8"]
 [ext_resource type="Script" uid="uid://d3mm6b3q1tbir" path="res://ui/high_score_label.gd" id="3_sgkfw"]
+[ext_resource type="AudioStream" uid="uid://dp50s16lfaatt" path="res://audio/menu.mp3" id="5_pjus7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gl0q7"]
 font = ExtResource("2_4kqf0")
@@ -78,6 +79,11 @@ position = Vector2(572, 321)
 texture = ExtResource("3_540h8")
 region_enabled = true
 region_rect = Rect2(0, 0, 1485.94, 954.708)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_pjus7")
+autoplay = true
+parameters/looping = true
 
 [connection signal="button_down" from="VBoxContainer/Button" to="." method="_on_play_button_down"]
 [connection signal="button_down" from="VBoxContainer/Button2" to="." method="_on_exit_button_down"]

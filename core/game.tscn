@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://7fy2ljrc87x2"]
+[gd_scene load_steps=9 format=3 uid="uid://7fy2ljrc87x2"]
 
 [ext_resource type="PackedScene" uid="uid://d2xt7uid3kg5w" path="res://player/player.tscn" id="1_8xnxh"]
 [ext_resource type="PackedScene" uid="uid://c5nt8ibo6didl" path="res://weapon/gun.tscn" id="2_gjr3k"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ct5clso3tijx4" path="res://ui/game_over.tscn" id="5_cjuek"]
 [ext_resource type="PackedScene" uid="uid://rgpt2hprt084" path="res://enemy/enemy.tscn" id="5_sjcnv"]
 [ext_resource type="Script" uid="uid://iuhy0vvqoyop" path="res://enemy/enemy_spawner.gd" id="6_cjuek"]
+[ext_resource type="AudioStream" uid="uid://c143ks6spcf40" path="res://audio/theme.mp3" id="8_4cdhi"]
 [ext_resource type="Texture2D" uid="uid://cvw3ld1v32e7e" path="res://art/bg.png" id="8_gjr3k"]
 
 [node name="Node2D" type="Node2D"]
@@ -65,5 +66,10 @@ position = Vector2(572, 321)
 texture = ExtResource("8_gjr3k")
 region_enabled = true
 region_rect = Rect2(0, 0, 1485.94, 954.708)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_4cdhi")
+autoplay = true
+parameters/looping = true
 
 [connection signal="timeout" from="EnemySpawner" to="EnemySpawner" method="_on_timeout"]

@@ -8,8 +8,8 @@ func _process(delta: float) -> void:
 	var directionX = 1 if (target.x > position.x) else -1
 	var directionY = 1 if (target.y > position.y) else -1
 	
-	var lengthX = (position.x - target.x) / DisplayServer.screen_get_size().x * 8
-	var lengthY = (position.y - target.y) / DisplayServer.screen_get_size().y * 8
+	var lengthX = (position.x - target.x + 0.3) / DisplayServer.screen_get_size().x * 8
+	var lengthY = (position.y - target.y + 0.3) / DisplayServer.screen_get_size().y * 8
 	
 	directionX *= abs(lengthX)
 	directionY *= abs(lengthY)
