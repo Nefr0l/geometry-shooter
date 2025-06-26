@@ -1,7 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://7fy2ljrc87x2"]
 
 [ext_resource type="PackedScene" uid="uid://d2xt7uid3kg5w" path="res://player/player.tscn" id="1_8xnxh"]
-[ext_resource type="Script" uid="uid://dq60atl58l4xw" path="res://player/player_collision.gd" id="2_a04qp"]
 [ext_resource type="PackedScene" uid="uid://c5nt8ibo6didl" path="res://weapon/gun.tscn" id="2_gjr3k"]
 [ext_resource type="PackedScene" uid="uid://dsw8f2cmym6u4" path="res://ui/hud.tscn" id="4_sjcnv"]
 [ext_resource type="PackedScene" uid="uid://ct5clso3tijx4" path="res://ui/game_over.tscn" id="5_cjuek"]
@@ -9,6 +8,18 @@
 [ext_resource type="Script" uid="uid://iuhy0vvqoyop" path="res://enemy/enemy_spawner.gd" id="6_cjuek"]
 [ext_resource type="Texture2D" uid="uid://cvw3ld1v32e7e" path="res://art/bg.png" id="8_gjr3k"]
 [ext_resource type="PackedScene" uid="uid://hn2ykm7mvro1" path="res://weapon/bullet.tscn" id="9_4cdhi"]
+
+[sub_resource type="GDScript" id="GDScript_gjr3k"]
+script/source = "extends Node
+
+func _ready() -> void:
+	pass
+
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"remove_hp\"):
+		GameManager.hp -= 1
+"
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,7 +33,7 @@ collision_mask = 10
 position = Vector2(124, 333)
 
 [node name="Lives" type="Node" parent="."]
-script = ExtResource("2_a04qp")
+script = SubResource("GDScript_gjr3k")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
