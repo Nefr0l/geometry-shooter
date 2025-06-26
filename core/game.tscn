@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://7fy2ljrc87x2"]
+[gd_scene load_steps=8 format=3 uid="uid://7fy2ljrc87x2"]
 
 [ext_resource type="PackedScene" uid="uid://d2xt7uid3kg5w" path="res://player/player.tscn" id="1_8xnxh"]
 [ext_resource type="PackedScene" uid="uid://c5nt8ibo6didl" path="res://weapon/gun.tscn" id="2_gjr3k"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://rgpt2hprt084" path="res://enemy/enemy.tscn" id="5_sjcnv"]
 [ext_resource type="Script" uid="uid://iuhy0vvqoyop" path="res://enemy/enemy_spawner.gd" id="6_cjuek"]
 [ext_resource type="Texture2D" uid="uid://cvw3ld1v32e7e" path="res://art/bg.png" id="8_gjr3k"]
-[ext_resource type="PackedScene" uid="uid://hn2ykm7mvro1" path="res://weapon/bullet.tscn" id="9_4cdhi"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -65,10 +64,6 @@ texture_repeat = 2
 position = Vector2(572, 321)
 texture = ExtResource("8_gjr3k")
 region_enabled = true
-region_rect = Rect2(0, 0, 1920, 1080)
-
-[node name="Bullet" parent="." instance=ExtResource("9_4cdhi")]
-position = Vector2(455, 386)
-rotation = -1.1268
+region_rect = Rect2(0, 0, 1485.94, 954.708)
 
 [connection signal="timeout" from="EnemySpawner" to="EnemySpawner" method="_on_timeout"]

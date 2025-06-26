@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cva7jpd2xucx3"]
+[gd_scene load_steps=7 format=3 uid="uid://cva7jpd2xucx3"]
 
 [ext_resource type="Script" uid="uid://bnx0kxgh4b5wq" path="res://core/main_menu.gd" id="1_fqoxg"]
 [ext_resource type="FontFile" uid="uid://riqxn6jn8pr7" path="res://ui/monogram.ttf" id="2_4kqf0"]
+[ext_resource type="Texture2D" uid="uid://cvw3ld1v32e7e" path="res://art/bg.png" id="3_540h8"]
+[ext_resource type="Script" uid="uid://d3mm6b3q1tbir" path="res://ui/high_score_label.gd" id="3_sgkfw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gl0q7"]
 font = ExtResource("2_4kqf0")
 font_size = 96
-font_color = Color(0.803224, 0.163539, 0.318261, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_540h8"]
+font = ExtResource("2_4kqf0")
+font_size = 32
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -31,10 +36,22 @@ theme_override_constants/margin_top = 64
 theme_override_constants/margin_bottom = 64
 
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
+size_flags_vertical = 0
 text = "Wybuchowa atmosfera"
 label_settings = SubResource("LabelSettings_gl0q7")
 horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 8
+text = "High score: "
+label_settings = SubResource("LabelSettings_540h8")
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("3_sgkfw")
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
@@ -52,6 +69,15 @@ size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("2_4kqf0")
 theme_override_font_sizes/font_size = 64
 text = "exit"
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(572, 321)
+texture = ExtResource("3_540h8")
+region_enabled = true
+region_rect = Rect2(0, 0, 1485.94, 954.708)
 
 [connection signal="button_down" from="VBoxContainer/Button" to="." method="_on_play_button_down"]
 [connection signal="button_down" from="VBoxContainer/Button2" to="." method="_on_exit_button_down"]

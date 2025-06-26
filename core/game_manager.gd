@@ -3,10 +3,19 @@ extends Control
 var hp
 var score
 var player_pos
+var config : ConfigFile
+var highScore
 
 func _ready() -> void:
 	hp = 3
 	score = 0
+	config = ConfigFile.new()
+	
+	if (config.load("user://config.cfg") != OK):
+		config.set_value("player", "high_score", 0)
+		config.save("user://config.cfg")
+	
+	highScore = config.get_value("player", "high_score")
 
 
 func _process(delta: float) -> void:
@@ -39,3 +48,11 @@ func spawn_enemy():
 	
 	enemy.position = enemy_pos
 	add_child(enemy)
+	
+
+func set_score():
+	if score > highScore:
+		highScore = score
+	
+	config.set_value("player", "high_score", highScore)
+	config.save("user://config.cfg")
