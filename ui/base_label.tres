@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://keq5jj4sslqk"]
+
+[ext_resource type="FontFile" uid="uid://riqxn6jn8pr7" path="res://ui/monogram.ttf" id="1_uqh10"]
+
+[resource]
+font = ExtResource("1_uqh10")
+font_size = 64
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)

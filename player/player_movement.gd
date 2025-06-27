@@ -15,3 +15,7 @@ func _physics_process(delta: float) -> void:
 
 	GameManager.player_pos = position
 	move_and_slide()
+
+
+func _on_score_timer_timeout() -> void:
+	GameManager.score += 1

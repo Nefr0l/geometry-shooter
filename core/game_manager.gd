@@ -21,10 +21,6 @@ func _ready() -> void:
 	highScore = config.get_value("player", "high_score")
 
 
-func _process(delta: float) -> void:
-	score += 1
-
-
 func reset_game():
 	get_tree().change_scene_to_file("res://core/game.tscn")
 	get_tree().paused = false

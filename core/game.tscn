@@ -39,10 +39,10 @@ offset_bottom = 0.0
 
 [node name="GameOver" parent="Control" instance=ExtResource("5_cjuek")]
 layout_mode = 1
-offset_left = 486.0
-offset_top = 36.0
-offset_right = 620.0
-offset_bottom = 76.0
+offset_left = 439.0
+offset_top = 156.0
+offset_right = 699.0
+offset_bottom = 395.0
 
 [node name="EnemySpawner" type="Timer" parent="."]
 wait_time = 3.0
@@ -72,4 +72,9 @@ stream = ExtResource("8_4cdhi")
 autoplay = true
 parameters/looping = true
 
+[node name="ScoreTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
 [connection signal="timeout" from="EnemySpawner" to="EnemySpawner" method="_on_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="Player" method="_on_score_timer_timeout"]
