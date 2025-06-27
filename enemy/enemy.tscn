@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://8wtuierqdf41" path="res://enemy/enemy.gd" id="2_ofsxj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ofsxj"]
-radius = 21.0
+radius = 25.0
 
 [node name="Enemy" type="Area2D"]
 collision_layer = 2

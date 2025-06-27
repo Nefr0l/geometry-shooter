@@ -6,9 +6,6 @@ var player_pos
 var config : ConfigFile
 var highScore
 
-var menu_theme : AudioStream
-var game_theme : AudioStream
-
 func _ready() -> void:
 	hp = 3
 	score = 0
@@ -46,7 +43,7 @@ func spawn_enemy():
 	enemy_pos.y = 0 if (randi_range(0, 1) == 1) else DisplayServer.screen_get_size().y
 	
 	enemy.position = enemy_pos
-	add_child(enemy)
+	get_tree().root.add_child(enemy)
 	
 
 func set_score():

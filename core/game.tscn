@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://7fy2ljrc87x2"]
+[gd_scene load_steps=10 format=3 uid="uid://7fy2ljrc87x2"]
 
 [ext_resource type="PackedScene" uid="uid://d2xt7uid3kg5w" path="res://player/player.tscn" id="1_8xnxh"]
 [ext_resource type="PackedScene" uid="uid://c5nt8ibo6didl" path="res://weapon/gun.tscn" id="2_gjr3k"]
 [ext_resource type="PackedScene" uid="uid://dsw8f2cmym6u4" path="res://ui/hud.tscn" id="4_sjcnv"]
 [ext_resource type="PackedScene" uid="uid://ct5clso3tijx4" path="res://ui/game_over.tscn" id="5_cjuek"]
 [ext_resource type="PackedScene" uid="uid://rgpt2hprt084" path="res://enemy/enemy.tscn" id="5_sjcnv"]
+[ext_resource type="PackedScene" uid="uid://vq75wa2dpbdp" path="res://ui/pause.tscn" id="6_4cdhi"]
 [ext_resource type="Script" uid="uid://iuhy0vvqoyop" path="res://enemy/enemy_spawner.gd" id="6_cjuek"]
 [ext_resource type="AudioStream" uid="uid://c143ks6spcf40" path="res://audio/theme.mp3" id="8_4cdhi"]
 [ext_resource type="Texture2D" uid="uid://cvw3ld1v32e7e" path="res://art/bg.png" id="8_gjr3k"]
@@ -38,11 +39,25 @@ offset_right = 0.0
 offset_bottom = 0.0
 
 [node name="GameOver" parent="Control" instance=ExtResource("5_cjuek")]
+visible = false
 layout_mode = 1
-offset_left = 439.0
-offset_top = 156.0
-offset_right = 699.0
-offset_bottom = 395.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 430.0
+offset_top = 120.0
+offset_right = 690.0
+offset_bottom = 449.0
+
+[node name="Pause" parent="Control" instance=ExtResource("6_4cdhi")]
+visible = false
+layout_mode = 1
+offset_left = 475.0
+offset_top = 140.0
+offset_right = 627.0
+offset_bottom = 429.0
 
 [node name="EnemySpawner" type="Timer" parent="."]
 wait_time = 3.0

@@ -5,7 +5,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if (GameManager.hp <= 0):
+	if GameManager.hp <= 0:
 		show()
 		GameManager.set_score()
 		get_tree().paused = true
