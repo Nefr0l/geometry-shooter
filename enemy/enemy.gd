@@ -1,7 +1,6 @@
 extends Area2D
 
 var target : Vector2
-var speed = 300
 
 func _process(delta: float) -> void:
 	target = GameManager.player_pos
@@ -14,8 +13,8 @@ func _process(delta: float) -> void:
 	directionX *= abs(lengthX)
 	directionY *= abs(lengthY)
 
-	position.x += speed * delta * directionX
-	position.y += speed * delta * directionY
+	position.x += GameManager.enemy_speed * delta * directionX
+	position.y += GameManager.enemy_speed * delta * directionY
 	
 	if GameManager.hp <= 0:
 		queue_free()

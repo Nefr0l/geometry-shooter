@@ -6,10 +6,20 @@ var player_pos
 var config : ConfigFile
 var highScore
 
+var audio : AudioStreamPlayer2D
+var sounds = {CLICK = "ui_click.wav", PAUSE = "ui_pause.wav", ENEMY_DEATH = "enemy_death.wav",
+GAME_OVER = "game_over.wav", HOVER = "ui_hover.wav"}
+
+var player_speed = 300
+var enemy_speed = 300
+
 func _ready() -> void:
 	hp = 3
 	score = 0
 	config = ConfigFile.new()
+	audio = AudioStreamPlayer2D.new()
+	audio.process_mode = Node.PROCESS_MODE_ALWAYS
+	add_child(audio)
 	
 	if (config.load("user://config.cfg") != OK):
 		config.set_value("player", "high_score", 0)
@@ -52,3 +62,9 @@ func set_score():
 	
 	config.set_value("player", "high_score", highScore)
 	config.save("user://config.cfg")
+
+
+func play_sound(sound_name):
+	var audio_stream = load("res://audio/" + str(sound_name))
+	audio.stream = audio_stream
+	audio.play()

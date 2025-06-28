@@ -49,6 +49,7 @@ size_flags_vertical = 0
 texture_normal = ExtResource("3_j1fe5")
 
 [node name="Label" type="Label" parent="MarginContainer2/Button"]
+layout_mode = 0
 offset_right = 191.0
 offset_bottom = 63.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -66,6 +67,7 @@ size_flags_vertical = 6
 texture_normal = ExtResource("3_j1fe5")
 
 [node name="Label" type="Label" parent="MarginContainer2/Button2"]
+layout_mode = 0
 offset_right = 191.0
 offset_bottom = 63.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)

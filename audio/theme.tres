@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamPlaylist" load_steps=3 format=3 uid="uid://dhew6cc6b68m8"]
+
+[ext_resource type="AudioStream" uid="uid://c143ks6spcf40" path="res://audio/theme.mp3" id="1_6b4xa"]
+[ext_resource type="AudioStream" uid="uid://dxu2pkngrlaij" path="res://audio/theme2.mp3" id="2_5pcqt"]
+
+[resource]
+shuffle = true
+fade_time = 1.0
+stream_count = 2
+stream_0 = ExtResource("1_6b4xa")
+stream_1 = ExtResource("2_5pcqt")

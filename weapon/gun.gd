@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	var rot = position.angle_to_point(get_viewport().get_mouse_position())
 	rotation = rotate_toward(rotation, rot, delta * 100)
 	
-	if cooldown == false:
+	if Input.is_action_pressed("shoot") and cooldown == false:
 		shoot()
 		cooldown = true
 		timer.start()

@@ -1,11 +1,30 @@
 theme:
-	
 Bold, Boulder, Boldest by AvapXia 
 source: Free Music Archive
 license: CC BY 4.0
 
-menu:
-	
+theme 2:
+Electro Game Theme 01 by Strobotone
+source: Free Music Archive
+license: Attribution-NoDerivatives 4.0 International License. 
 Retro Arcade by Beat Mekanik
+
+menu:
+Retro Arcade by Beat Makanik
 source: Free Music Archive 
 license: CC BY 4.0
+
+ui click sound:
+https://freesound.org/people/FiveBrosStopMosYT/sounds/537032/
+
+ui hover:
+https://freesound.org/people/DrMinky/sounds/166186/
+
+ui pause:
+https://freesound.org/people/jalastram/sounds/361887/
+
+enemy death sound:
+https://freesound.org/people/AlienXXX/sounds/196223/
+
+game over sound:
+https://freesound.org/people/AceOfSpadesProduc100/sounds/333785/

@@ -67,6 +67,7 @@ size_flags_horizontal = 4
 texture_normal = ExtResource("4_i3ow4")
 
 [node name="Label" type="Label" parent="VBoxContainer/Button"]
+layout_mode = 0
 offset_right = 191.0
 offset_bottom = 63.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -103,8 +104,9 @@ texture = ExtResource("3_540h8")
 region_enabled = true
 region_rect = Rect2(0, 0, 1485.94, 954.708)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_pjus7")
+volume_db = -5.0
 autoplay = true
 parameters/looping = true
 

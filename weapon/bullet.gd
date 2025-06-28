@@ -6,6 +6,7 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.get_collision_layer_value(2):
+		GameManager.play_sound(GameManager.sounds["ENEMY_DEATH"])
 		area.queue_free()
 		queue_free()
 
