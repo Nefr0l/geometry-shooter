@@ -28,3 +28,6 @@ https://freesound.org/people/AlienXXX/sounds/196223/
 
 game over sound:
 https://freesound.org/people/AceOfSpadesProduc100/sounds/333785/
+
+damage:
+	https://freesound.org/people/InspectorJ/sounds/448226/

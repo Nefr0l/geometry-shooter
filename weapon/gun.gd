@@ -1,6 +1,6 @@
 extends Area2D
 
-var cooldown : bool = false
+var cooldown : bool = true
 var timer : Timer
 
 func _ready() -> void:
@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("shoot") and cooldown == false:
 		shoot()
 		cooldown = true
+		GameManager.play_sound(GameManager.sounds['SHOOT'])
 		timer.start()
 
 

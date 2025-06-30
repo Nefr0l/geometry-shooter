@@ -8,7 +8,7 @@ var highScore
 
 var audio : AudioStreamPlayer2D
 var sounds = {CLICK = "ui_click.wav", PAUSE = "ui_pause.wav", ENEMY_DEATH = "enemy_death.wav",
-GAME_OVER = "game_over.wav", HOVER = "ui_hover.wav"}
+GAME_OVER = "game_over.wav", HOVER = "ui_hover.wav", DAMAGE = "damage.wav", SHOOT = "shoot.wav"}
 
 var player_speed = 300
 var enemy_speed = 300

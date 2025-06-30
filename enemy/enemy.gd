@@ -24,4 +24,5 @@ func _on_area_entered(area) -> void:
 	if area.get_collision_layer_value(1):
 		print("hit")
 		GameManager.hp -= 1
+		GameManager.play_sound(GameManager.sounds['DAMAGE'])
 		queue_free()
