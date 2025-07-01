@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="wybuchowa-atmosfera"
+config/name="geometry-shooter"
 run/main_scene="uid://cva7jpd2xucx3"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/show_image=false
 
 [autoload]
 

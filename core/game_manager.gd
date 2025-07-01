@@ -29,14 +29,14 @@ func _ready() -> void:
 
 
 func reset_game():
-	get_tree().change_scene_to_file("res://core/game.tscn")
+	get_tree().change_scene_to_file("res://core/Game.tscn")
 	get_tree().paused = false
 	hp = 3
 	score = 0
 
 	
 func to_menu():
-	get_tree().change_scene_to_file("res://core/main_menu.tscn")
+	get_tree().change_scene_to_file("res://core/MainMenu.tscn")
 	get_tree().paused = false
 
 	
@@ -49,8 +49,8 @@ func spawn_enemy():
 	var enemy = preload("res://enemy/enemy.tscn").instantiate()
 	
 	var enemy_pos : Vector2
-	enemy_pos.x = randf_range(0, DisplayServer.screen_get_size().x)
-	enemy_pos.y = 0 if (randi_range(0, 1) == 1) else DisplayServer.screen_get_size().y
+	enemy_pos.x = randf_range(0, get_viewport_rect().size.x)
+	enemy_pos.y = 0 if (randi_range(0, 1) == 1) else get_viewport_rect().size.y
 	
 	enemy.position = enemy_pos
 	get_tree().root.add_child(enemy)

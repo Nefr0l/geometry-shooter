@@ -12,6 +12,7 @@ func _input(event: InputEvent) -> void:
 		unpause() if paused == true	else pause()
 		GameManager.play_sound(GameManager.sounds["PAUSE"])
 
+
 func _on_return_button_down() -> void:
 	GameManager.play_sound(GameManager.sounds["CLICK"])
 	unpause()
